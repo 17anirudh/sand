@@ -1,0 +1,40 @@
+@import 'tailwindcss';
+
+:root {
+    --background: #0C0C0C;
+    --foreground: #F5E8C7;
+    --primary: #2196F3;
+}
+
+@font-face {
+  font-family: 'FacultyGlyphic-Regular';
+  /* Use /fonts/... if placed in public/, or use relative path like ./assets/fonts/... */
+  src: url('./assets/fonts/FacultyGlyphic-Regular.ttf') format('ttf');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-primary: var(--primary);
+    --font-sans: "FacultyGlyphic-Regular" sans
+}
+
+@utility center {
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@layer base {
+    body {
+        @apply relative h-screen overflow-x-hidden w-screen flex flex-col center bg-background text-foreground font-sans;
+    }
+}
