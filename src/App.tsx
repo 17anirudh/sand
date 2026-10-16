@@ -1,4 +1,4 @@
-import { Suspense, type Component } from 'solid-js';
+import { type Component, Suspense } from 'solid-js';
 import Navbar from '@/components/navbar';
 
 export const App: Component<Child> = (props) => {

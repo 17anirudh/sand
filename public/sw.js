@@ -1,5 +1,5 @@
 // Minimal offline support: network-first, fall back to cache.
-const CACHE = 'tick-v1';
+const CACHE = 'sand-v1';
 
 self.addEventListener('install', () => self.skipWaiting());
 
@@ -7,7 +7,9 @@ self.addEventListener('activate', (event) => {
   event.waitUntil(
     (async () => {
       const keys = await caches.keys();
-      await Promise.all(keys.filter((key) => key !== CACHE).map((key) => caches.delete(key)));
+      await Promise.all(
+        keys.filter((key) => key !== CACHE).map((key) => caches.delete(key)),
+      );
       await self.clients.claim();
     })(),
   );
@@ -15,7 +17,11 @@ self.addEventListener('activate', (event) => {
 
 self.addEventListener('fetch', (event) => {
   const { request } = event;
-  if (request.method !== 'GET' || new URL(request.url).origin !== self.location.origin) return;
+  if (
+    request.method !== 'GET' ||
+    new URL(request.url).origin !== self.location.origin
+  )
+    return;
 
   event.respondWith(
     (async () => {

@@ -15,7 +15,9 @@
 
     // Type Checking & Safety
     "strict": true,
-    "types": ["vite/client"],
+    // deps ship conflicting global declarations (bun-types vs vite/client)
+    "skipLibCheck": true,
+    "types": ["vite/client", "bun"],
 
     // Path alias
     "paths": {

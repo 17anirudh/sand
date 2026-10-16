@@ -1,5 +1,5 @@
-import { lazy } from 'solid-js';
 import type { RouteDefinition } from '@solidjs/router';
+import { lazy } from 'solid-js';
 import Home from './pages/home';
 import Remainder from './pages/remainder';
 
@@ -10,7 +10,7 @@ export const routes: RouteDefinition[] = [
   },
   {
     path: '/remainder',
-    component: Remainder
+    component: Remainder,
   },
   {
     path: '**',

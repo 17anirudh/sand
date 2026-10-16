@@ -26,11 +26,15 @@ bun run dev     # http://localhost:3000
 
 ## Scripts
 
-| Command         | Description                    |
-| --------------- | ------------------------------ |
-| `bun run dev`   | Vite dev server (port 3000)    |
-| `bun run build` | Production build to `dist/`    |
-| `bun run serve` | Preview the built output       |
+| Command                   | Description                          |
+| ------------------------- | ------------------------------------ |
+| `bun run dev`             | Vite dev server (port 3000)          |
+| `bun run build`           | Production build to `dist/`          |
+| `bun run serve`           | Preview the built output             |
+| `bun run typecheck`       | Type-check with `tsc --noEmit`       |
+| `bun run lint`            | Biome: lint + format + import order  |
+| `bun run format`          | Biome: format only                   |
+| `bun run organize`        | Biome: sort imports only             |
 
 ## Deployment
 

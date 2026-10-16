@@ -1,11 +1,11 @@
-import { createSignal, onMount } from "solid-js";
+import { createSignal, onMount } from 'solid-js';
 
 type Task = {
   label: string;
-  status: "pending" | "completed";
+  status: 'pending' | 'completed';
 };
 
-const STORAGE_KEY = "remainders";
+const STORAGE_KEY = 'remainders';
 
 export default function Remainder() {
   const [items, setItems] = createSignal<Task[]>([]);
@@ -15,12 +15,13 @@ export default function Remainder() {
     try {
       setItems(JSON.parse(stored) as Task[]);
     } catch {
-      console.error("Invalid tasks in localStorage");
+      console.error('Invalid tasks in localStorage');
     }
   });
 
+  // biome-ignore lint/correctness/noUnusedVariables: addTask is wired to the reminder input UI once built.
   function addTask(label: string): void {
-    setItems((prev) => [...prev, { label, status: "pending" }]);
+    setItems((prev) => [...prev, { label, status: 'pending' }]);
   }
 
   function toggleTask(label: string) {
@@ -29,7 +30,7 @@ export default function Remainder() {
         task.label === label
           ? {
               ...task,
-              status: task.status === "pending" ? "completed" : "pending",
+              status: task.status === 'pending' ? 'completed' : 'pending',
             }
           : task,
       ),
@@ -41,20 +42,18 @@ export default function Remainder() {
   return (
     <>
       {items.length ? (
-          <ul>
-            {items().map((task) => (
-              <li>
-                <button onClick={() => toggleTask(task.label)}>
-                  {task.label} — {task.status}
-                </button>
-              </li>
-            ))}
-          </ul>
+        <ul>
+          {items().map((task) => (
+            <li>
+              <button type='button' onClick={() => toggleTask(task.label)}>
+                {task.label} — {task.status}
+              </button>
+            </li>
+          ))}
+        </ul>
       ) : (
-          <h2>Empty</h2>
-        )
-      }
-
+        <h2>Empty</h2>
+      )}
     </>
   );
 }

@@ -1,1 +1,1 @@
-type Child = { children: Element }
+type Child = { children: import('solid-js').JSX.Element };
