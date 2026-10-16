@@ -6,6 +6,7 @@ A minimal, focused time app. Peak minimalism, UX-first, and native-feeling perfo
 
 Client-only SPA — no backend, no accounts. State lives in `localStorage`, so it works offline.
 
+
 ## Modules
 
 | Module    | Purpose                  | Status                                                        |
@@ -15,15 +16,22 @@ Client-only SPA — no backend, no accounts. State lives in `localStorage`, so i
 | Calendar  | Month view               | Planned                                                       |
 | Monitor   | Stopwatch and timer      | Planned                                                       |
 
-## Stack
+## Tech Stack
 
-SolidJS · TypeScript (strict) · Vite · Tailwind CSS v4
+| Tool | Purpose |
+| ---- | ----- |
+| SolidJS | Frontend Framework (fine graine reactivity) |
+| TypScript | Type Checker |
+| Vite | Bundler |
+| Tailwind CSS | Design System and utility styling |
+| Bun | JSC based JS toolkit |
+| Biome | Rust based JS linter and formater |
 
 ## Getting started
 
 ```bash
 bun install
-bun run dev     # http://localhost:3000
+bun dev     # http://localhost:3000
 ```
 
 ## Scripts

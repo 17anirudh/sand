@@ -1,24 +1,24 @@
 # AGENTS.md
 
-Minimal SolidJS + Vite + Tailwind v4 time app ("Sand"). Client-only, no backend (client state via `localStorage`). Modules: Clock, Reminders (todos + alarms), Calendar, Monitor (stopwatch + timer). Goal: peak minimalism with a focus on UX and native performance.
+Sans is a minimal app designed for a simple reason; unite clock, calender and todos. Building using SolidJS + Vite + Tailwind v4. Client-only, no backend (client state via `localStorage` or `IndexedDB`). Goal: Minimalism, UX and native performance.
 
 ## Commands
 
-Uses **bun** (`bun.lock` is current; `pnpm-lock.yaml` is a leftover from the template — ignore it).
+Uses **bun** as package manager (`bun.lock` is current; `pnpm-lock.yaml` is a leftover from the template, ignore it).
 
 ```bash
-bun install
-bun run dev              # vite dev server, port 3000 (bun start also works)
-bun run build            # no typecheck; vite build only -> dist/
-bun run serve            # preview built dist/
-bun run typecheck        # tsc --noEmit
-bun run lint             # biome check: lint + format + import order
-bun run lint:fix         # biome check --write (apply safe fixes + format)
-bun run format           # biome format --write
-bun run organize-imports # biome: sort imports only (no lint/format)
+bun i
+bun dev           # vite dev server, port 3000 (bun start also works)
+bun run build     # no typecheck; vite build only -> dist/
+bun run serve     # preview built dist/
+bun run typecheck # tsc --noEmit
+bun run lint      # biome check: lint + format + import order
+bun run lint:fix  # biome check --write (apply safe fixes + format)
+bun run format    # biome format --write
+bun run organize  # biome: sort imports only (no lint/format)
 ```
 
-There is **no** test script. Lint/format is **Biome** (`biome.json`, recommended rules); it respects `.gitignore` (`vcs.useIgnoreFile`), so `dist/` and `docs/` are skipped. CSS lint/format is **disabled on purpose** (Tailwind v4 `@apply`/`@theme`), so `src/styles/*.css` is untouched. Prefer `bun run organize-imports` to sort imports — `lint:fix` (`check --write`) also reformats everything. `bun run typecheck` runs `tsc --noEmit`; `tsconfig.json` needs `skipLibCheck` because `@types/bun` and `vite/client` ship conflicting global `ImportMeta` declarations. `build` does **not** typecheck. For Zed, `.zed/settings.json` runs organize-imports (and Biome formatting) on save.
+There is **no** test script. Lint/format is **Biome** (`biome.json`, recommended rules); it respects `.gitignore` (`vcs.useIgnoreFile`), so `dist/` and `docs/` are skipped. CSS lint/format is **disabled on purpose** (Tailwind v4 `@apply`/`@theme`), so `src/styles/*.css` is untouched. Prefer `bun run organize` to sort imports; `lint:fix` (`check --write`) also reformats everything. `bun run typecheck` runs `tsc --noEmit`; `tsconfig.json` needs `skipLibCheck` because `@types/bun` and `vite/client` ship conflicting global `ImportMeta` declarations. `build` does **not** typecheck. For Zed, `.zed/settings.json` runs organize-imports (and Biome formatting) on save.
 
 ## Architecture
 
