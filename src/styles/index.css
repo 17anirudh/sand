@@ -8,8 +8,8 @@
 
 @font-face {
   font-family: 'FacultyGlyphic-Regular';
-  /* Use /fonts/... if placed in public/, or use relative path like ./assets/fonts/... */
-  src: url('./assets/fonts/FacultyGlyphic-Regular.ttf') format('ttf');
+  /* Path is relative to this CSS file (src/styles/), so reach the repo-root assets/ dir. */
+  src: url('../../assets/fonts/FacultyGlyphic-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;

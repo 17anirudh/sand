@@ -18,3 +18,9 @@ render(
   () => <Router root={(props: Element | any) => <App>{props.children}</App>}>{routes}</Router>,
   root!,
 );
+
+if (import.meta.env.PROD && 'serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js').catch(() => {});
+  });
+}
