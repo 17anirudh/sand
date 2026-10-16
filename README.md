@@ -1,5 +1,7 @@
 # Sand
 
+![Photo]("./public/icon-192.png")
+
 A minimal, focused time app. Peak minimalism, UX-first, and native-feeling performance.
 
 Client-only SPA — no backend, no accounts. State lives in `localStorage`, so it works offline.
