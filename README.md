@@ -1,6 +1,6 @@
 # Sand
 
-![Photo]("./public/icon-192.png")
+![Photo](public/icon-192.png)
 
 A minimal, focused time app. Peak minimalism, UX-first, and native-feeling performance.
 
